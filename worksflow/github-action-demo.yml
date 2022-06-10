@@ -11,4 +11,4 @@ jobs:
         with:
           python-version: 3.8
       - name: Test with Python
-        run: cd ${{ github.workspace }}/week14/pyci && python ./test.py
+        run: cd ${{ github.workspace }}/github-action-test && python ./test.py
