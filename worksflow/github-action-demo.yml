@@ -1,1 +1,16 @@
-
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  github-action-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v3
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - name: Install dependencies
+        run: cd ${{ github.workspace }}/week14/pyci && pip install -r ./requirements.txt
+      - name: Test with Python
+        run: cd ${{ github.workspace }}/week14/pyci && python ./test_main.py
